@@ -11,7 +11,7 @@ using VisitorLog_PDFD.Data;
 namespace VisitorLog_PDFD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250301155743_InitialCreate")]
+    [Migration("20250311180503_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

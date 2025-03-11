@@ -20,13 +20,13 @@ namespace VisitorLog_PDFD.Migrations
                                             st.CityName
                                         FROM 
                                             Persons p
-                                        INNER JOIN 
+                                        LEFT JOIN 
                                             (select PersonId, c.ContinentId, c.Name + ' - ' + n.name as ContinentName from SelectedContinents sc inner join Continents c ON sc.ContinentId = c.ContinentId and isnull(sc.IsDeleted,0)=0
 	                                        inner join NameTypes n on n.nametypeid=c.NameTypeId) cp on p.PersonId = cp.PersonId 
-                                        INNER JOIN 
+                                        LEFT JOIN 
                                             ( select ContinentId, c.countryid, c.Name +' - '+ n.name as countryname from SelectedCountries sc inner join Countries c ON sc.CountryId = c.CountryId and isnull(sc.IsDeleted,0)=0
 	                                        inner join NameTypes n on n.nametypeid=c.NameTypeId) ct on ct.continentid = cp.continentid
-                                        INNER JOIN 
+                                        LEFT JOIN 
                                             ( select countryid, s.stateid, s.Name +' - '+ n.name as statename from SelectedStates ss inner join States s ON ss.StateId = s.StateId and isnull(ss.IsDeleted,0)=0
 	                                        inner join NameTypes n on n.nametypeid=s.NameTypeId) sn on sn.countryid = ct.countryid
                                         LEFT JOIN 

@@ -17,7 +17,6 @@ namespace VisitorLog_PDFD.Controllers
         public IActionResult Index()
         {
             int personId = 1;
-            //HttpContext.Session.SetInt32("PersonId", personId);
 
             var person = _context.Persons.FirstOrDefault(p => p.PersonId == personId);
     

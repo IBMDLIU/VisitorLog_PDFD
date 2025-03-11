@@ -11,7 +11,7 @@ using VisitorLog_PDFD.Data;
 namespace VisitorLog_PDFD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250301160056_AddReportView")]
+    [Migration("20250311181228_AddReportView")]
     partial class AddReportView
     {
         /// <inheritdoc />
